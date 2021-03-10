@@ -91,6 +91,7 @@ class POS_tagger:
                   ['kastaun', 'spindle whorl'], 
                   ['baikar', 'cup/glass/plate'], 
                   ['eriar', 'pottery'], 
+                  ['baltuser', 'pottery'], 
                   ['seltar', 'grave'], 
                   ['siltar', 'grave'],
                   ['salir', 'money'],
@@ -137,7 +138,7 @@ class POS_tagger:
 
     def generate_verbs(self):
         ''' Apply some suffixes/prefixes to some roots '''
-        verb_roots = ['euk', 'eki', 'ban', 'bas', 'tar', 'tak', 'rok', 'ust', 'unst', 'oka']
+        verb_roots = ['euk', 'eki', 'ban', 'bas', 'tar', 'tak', 'rok', 'ust', 'unst', 'oka', 'uma']
         all_verbs = []
         for r in verb_roots:
             v = self.produce_verb_dict(r)
@@ -211,6 +212,7 @@ class POS_tagger:
                   ['tartin', 'tartin', None, None],
                   ['tarti', 'tar', None, None],
                   [None, 'tanes', None, None],
+                  [None, 'tan', None, None],
                   ['turs', None, None, None],
                   ['biur', 'biur', None, None],
                   ['biurti', None, None, None],
@@ -240,6 +242,7 @@ class POS_tagger:
                   ['nalbe', None, None, None],
                   ['iltun', 'iltun', None, None],
                   ['alor', None, None, None],
+                  ['osor', None, None, None],
                   ['alos', None, None, None],
                   ['alo', None, None, None],
                   ['aiun', None, None, None],
@@ -253,6 +256,8 @@ class POS_tagger:
                   ['arki', 'arkis', None, None],
                   [None, 'arkir', None, None],
                   [None, 'berton', None, None],
+                  [None, 'ber', None, None],
+                  [None, 'bersir', None, None],
                   ['atin', 'atin', None, None],
                   ['beles', 'beles', None, None],
                   ['bels', 'bels', None, None],
