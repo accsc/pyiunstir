@@ -153,7 +153,7 @@ class POS_tagger:
 
     def generate_numbers(self):
         ''' Generate numbers '''
-        bases = ['', 'abar', 'abarke', 'bar', 'barke', 'orkei', 'orkeike', 'orkeiabar', 'lakei', 'erdi']
+        bases = ['', 'abar', 'abarke', 'bar', 'barke', 'orkei', 'orkeike', 'orkeiabar', 'lakei', 'erti']
         units = ['', 'ban', 'ba', 'bin', 'bi', 'irur', 'laur', 'bors', 'sei', 'sisbi', 'sorse']
         nums_dict = []
         for i in range(len(bases)):
@@ -172,8 +172,8 @@ class POS_tagger:
 
                 nums_dict.append([cnum, s, p])
         # Add some suffixes - metals, uunits, etc.
-        suffix = ['', 'tor', 'ei', 'te', 'otar', 'etar', 'kitar', 'kite']
-        suffix_description = ['', 'Thing', 'fraction', 'ergative', 'bronze', 'of bronze', 'of silver', 'silver']
+        suffix = ['', 'tor', 'ei', 'te', 'otar', 'etar', 'kitar', 'kite', 'ketor']
+        suffix_description = ['', 'Thing', 'fraction', 'ergative', 'bronze', 'of bronze', 'of silver', 'silver', 'Thing']
         numbers_dict_full = []
         for cname in nums_dict:
             for i in range(len(suffix)):
