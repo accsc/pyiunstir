@@ -88,6 +88,8 @@ class POS_tagger:
         ''' Generate a dictionary of common names '''
         common_names_dict = []
         terms = [['kutur', 'letter/document'], 
+                  ['kotua', 'letter/document'],
+                  ['kutu', 'letter/document'],
                   ['kastaun', 'spindle whorl'], 
                   ['baikar', 'cup/glass/plate'], 
                   ['eriar', 'pottery'], 
@@ -98,6 +100,7 @@ class POS_tagger:
                   ['otar', 'bronze'],
                   ['etar', 'bronze'],
                   ['kite', 'silver'],
+                  ['kitei', 'silver'],
                   ['kitar', 'silver'],
                   ['kurs', 'unknown']]
 
@@ -123,7 +126,7 @@ class POS_tagger:
 
     def produce_verb_dict(self, root):
         verbs_dict = []
-        suffix_verb = ['', 'n', 'r', 'a', 'o', 'e', 'tan', 'tetine', 'tine', 'tetan',  'an', 'in', 'en', 'ar', 'ir', 'er', 'ur' , 'etan', 'itan', 'otan', 'atan', 'utan', 'atetan', 'etetan', 'itetan', 'otetan', 'utetan', 'atine', 'etine', 'itine', 'otine', 'utine', 'atetine', 'etetine','itetine','otetine','utetine', 'iar', 'ear', 'sar', 'sir', 'ser', 'saran', 'siran', 'seran', 'la', 'le', 'li', 'lo', 'lu', 'ain', 'ila', 'ile', 'ili', 'ilo', 'ilu', 'ana', 'ina', 'ena', 'ato', 'eto', 'ito', 'uto', 'irte', 'erte', 'arte', 'orte', 'urte' ]
+        suffix_verb = ['', 'n', 'r', 'a', 'o', 'e', 'tan', 'tetine', 'tine', 'tetan',  'an', 'in', 'en', 'ar', 'ir', 'er', 'ur' , 'etan', 'itan', 'otan', 'atan', 'utan', 'atetan', 'etetan', 'itetan', 'otetan', 'utetan', 'atine', 'etine', 'itine', 'otine', 'utine', 'atetine', 'etetine','itetine','otetine','utetine', 'iar', 'ear', 'sar', 'sir', 'ser', 'saran', 'siran', 'seran', 'la', 'le', 'li', 'lo', 'lu', 'ain', 'ila', 'ile', 'ili', 'ilo', 'ilu', 'ana', 'ina', 'ena', 'ato', 'eto', 'ito', 'uto', 'irte', 'erte', 'arte', 'orte', 'urte', 'kon' ]
         prefix_verb = ['', 't', 'it', 'bit', 'bi', 'e', 'i', 'bite', 'biti', 'ite', 'iti', 'ti', 'te', 's']
 
         for i in range(len(suffix_verb)):
@@ -138,13 +141,14 @@ class POS_tagger:
 
     def generate_verbs(self):
         ''' Apply some suffixes/prefixes to some roots '''
-        verb_roots = ['euk', 'eki', 'ban', 'bas', 'tar', 'tak', 'rok', 'ust', 'unst', 'oka', 'uma']
+        verb_roots = ['euk', 'eki', 'ban', 'bas', 'tar', 'tak', 'rok', 'ust', 'unst', 'oka', 'umar']
         all_verbs = []
         for r in verb_roots:
             v = self.produce_verb_dict(r)
             all_verbs.extend(v)
 
-        all_verbs.append(['nai', 'n', 'ai', ''])
+        all_verbs.append(['nai', 'n', 'ai', 'I am'])
+        all_verbs.append(['arnai', 'arn', 'ai', 'I am property of'])
 
 
         return all_verbs
@@ -153,7 +157,7 @@ class POS_tagger:
 
     def generate_numbers(self):
         ''' Generate numbers '''
-        bases = ['', 'abar', 'abarke', 'bar', 'barke', 'orkei', 'orkeike', 'orkeiabar', 'lakei', 'erti']
+        bases = ['', 'abar', 'abarke', 'bar', 'barke', 'orkei', 'orkeike', 'orkeiabar', 'lakei', 'erti', 'bin', 'binke']
         units = ['', 'ban', 'ba', 'bin', 'bi', 'irur', 'laur', 'bors', 'sei', 'sisbi', 'sorse']
         nums_dict = []
         for i in range(len(bases)):
@@ -289,6 +293,7 @@ class POS_tagger:
                   ['bikir', 'bikir', None, None],
                   ['biki', 'bikis', None, None],
                   ['aitu', None, None, None],
+                  ['anar', None, None, None],
                   [None, 'betin', None, None],
                   [None,'', None, None],
                  ]
